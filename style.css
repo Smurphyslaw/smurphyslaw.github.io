@@ -1,42 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #e0f7fa;
 }
 
 .container {
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 300px;
+    width: 320px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    color: #00796b;
 }
 
 input {
     padding: 10px;
     width: calc(100% - 22px);
     margin-bottom: 10px;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+input:focus {
+    outline: none;
+    transform: scale(1.05);
 }
 
 button {
     padding: 10px 20px;
-    background: #007bff;
+    background: #00796b;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #004d40;
+    transform: scale(1.05);
 }
 
-#saved-amounts {
+#saved-amounts, #total-saved {
     margin-top: 20px;
+    font-size: 1.2em;
+    color: #00796b;
     text-align: left;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
